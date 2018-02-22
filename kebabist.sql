@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2018 at 01:04 PM
+-- Generation Time: Feb 22, 2018 at 06:49 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -50,6 +50,8 @@ INSERT INTO `ingredient` (`id`, `name`) VALUES
 CREATE TABLE `menu` (
   `id` int(11) NOT NULL,
   `idOrders` int(11) NOT NULL,
+  `type` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `hour` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `nbMenu` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

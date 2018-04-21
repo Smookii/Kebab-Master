@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2018 at 06:49 PM
+-- Generation Time: Apr 21, 2018 at 12:47 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -19,6 +19,24 @@ SET time_zone = "+00:00";
 --
 -- Database: `kebabist`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `groups`
+--
+
+CREATE TABLE `groups` (
+  `GroupId` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `groups`
+--
+
+INSERT INTO `groups` (`GroupId`) VALUES
+('root_group'),
+('default');
 
 -- --------------------------------------------------------
 
@@ -54,6 +72,13 @@ CREATE TABLE `menu` (
   `hour` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `nbMenu` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `menu`
+--
+
+INSERT INTO `menu` (`id`, `idOrders`, `type`, `hour`, `nbMenu`) VALUES
+(1, 0, 'Durum', '17:30', 1);
 
 -- --------------------------------------------------------
 
@@ -113,24 +138,6 @@ INSERT INTO `sauce` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `pseudo` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `pwd` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `mail` text COLLATE utf8_unicode_ci NOT NULL,
-  `rank` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `numTel` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `city` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `npa` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `adresse` text COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `userorders`
 --
 
@@ -139,6 +146,45 @@ CREATE TABLE `userorders` (
   `idUser` int(11) NOT NULL,
   `idOrder` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `pwd` varchar(150) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `pwd`) VALUES
+(1, 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'),
+(2, 'test', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_groups`
+--
+
+CREATE TABLE `users_groups` (
+  `GroupId` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `users_groups`
+--
+
+INSERT INTO `users_groups` (`GroupId`, `username`) VALUES
+('root_group', 'admin'),
+('default', 'test');
 
 --
 -- Indexes for dumped tables
@@ -183,15 +229,15 @@ ALTER TABLE `sauce`
   ADD KEY `id` (`id`);
 
 --
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `userorders`
 --
 ALTER TABLE `userorders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -207,7 +253,7 @@ ALTER TABLE `ingredient`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `menuingredient`
 --
@@ -229,15 +275,15 @@ ALTER TABLE `orders`
 ALTER TABLE `sauce`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `userorders`
 --
 ALTER TABLE `userorders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -24,11 +24,11 @@
                             <div class="ten wide column">
                                 <div class="ui two column grid">
                                     <div class="three wide column">
-                                        <img src="resources/img/doner-kebab-meat-roll.png.png"></img>         
+                                        <img src="resources/img/doner-kebab-meat-roll.png"></img>         
                                     </div>
                                     <div class="ten wide column">
                                         <h1>Kebab Master</h1>
-                                        <em><p>.. Livraisons de kebabs de pères en mères depuis 632</p></em>
+                                        <em><p>.. Livraisons de kebabs de pères en mères depuis 1632</p></em>
                                     </div>
                                 </div>
                             </div>

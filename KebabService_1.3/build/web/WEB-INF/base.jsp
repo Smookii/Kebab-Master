@@ -26,10 +26,11 @@
                                     <div class="three wide column">
                                         <img src="resources/img/doner-kebab-meat-roll.png"></img>         
                                     </div>
-                                    <div class="ten wide column">
+                                    <div class="nine wide column">
                                         <h1>Kebab Master</h1>
                                         <em><p>.. Livraisons de kebabs de pères en mères depuis 1632</p></em>
                                     </div>
+                               
                                 </div>
                             </div>
                             <div class="ui two wide column right floated">

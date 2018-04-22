@@ -17,6 +17,14 @@ and open the template in the editor.
     padding-bottom: 3.0em;
 }
 
+.masthead {
+    padding-top: 3.5em;
+}
+
+.logo {
+    max-height: 5.0em;
+}
+
 /* Mobile */
 
 @media only screen and (max-width: 767px) {

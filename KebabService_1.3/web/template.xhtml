@@ -5,24 +5,53 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <h:head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css" type="text/css"></link>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
-        <script src="resources/resource-main.js"></script>
-        <link rel="stylesheet" href="resources/style.css" type="text/css"></link>
+        <h:outputScript library="js" name="jquery-3.3.1.min.js" />
+        <h:outputStylesheet library="css" name="semantic.min.css"  />
+        <h:outputScript library="js" name="semantic.min.js" />     
+        <h:outputScript library="js" name="resource-main.js" />
+        <h:outputStylesheet library="css" name="style.css"  />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title><ui:insert name="title">Default Title</ui:insert></title>
-        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+
     </h:head>
 
     <h:body>
-        <div class="ui">
-            <h1>
-                <ui:insert name="title">Default Title</ui:insert>
-            </h1>
-            <p>
-                <ui:insert name="body">Default Body</ui:insert>
-            </p>
+        <div class="ui sidebar inverted vertical menu">
+            <a class="item" href="#">Accueil</a>
+            <a class="item" href="#">Passer une commande</a>
+            <a class="item" href="#">Qui somme nous ?</a>        
+        </div>
+        <div class="pusher">
+            <div class="ui topbar container">
+                <div class="ui container masthead">
+                    <div class = "ui grid">
+                        <div class="one wide column">
+                            <h:graphicImage class="logo" value="/resources/img/doner-kebab-meat-roll.png"/>
+                        </div>
+                        <div class="eleven wide column title">
+                            <h1>Kebab Master</h1>
+                            <em><p>.. Livraisons de kebabs de pères en mères depuis 1632</p></em>
+                        </div>
+                        <div class="ui one wide column right floated">
+                                <div class="middle aligned content mobile only grid">
+                                    <i class="bars large icon sidebarbutton middle aligned "></i>
+                                </div>
+                         </div>
+                    </div>
+                    <div class="ui inverted menu ">
+                        <a class="item" href="#">Accueil</a>
+                        <a class="item" href="#">Passer une commande</a>
+                        <a class="item" href="#">Qui somme nous ?</a>  
+                    </div>
+                    <h1>
+                        <ui:insert name="title">Default Title</ui:insert>
+                    </h1>
+                    <p>
+                        <ui:insert name="body">Default Body</ui:insert>
+                    </p>
+                    
+                </div>
+            </div>
         </div>
     </h:body>
 

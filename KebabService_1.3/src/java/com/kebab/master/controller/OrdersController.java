@@ -166,7 +166,14 @@ public class OrdersController implements Serializable {
     private void recreatePagination() {
         pagination = null;
     }
-
+    
+    public void incOrder(Orders order)
+    {
+        order.setState(order.getState()+1);
+        current = order;
+        update();
+    }
+    
     public String next() {
         getPagination().nextPage();
         recreateModel();

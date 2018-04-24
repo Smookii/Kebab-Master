@@ -5,9 +5,10 @@
         <group>
             <file>file:/C:/Users/axel.bentodas/Documents/3.TroisiemeAnnee/JavaEE/Kebab-Master/KebabService_1.3/src/java/com/kebab/master/entities/Orders.java</file>
             <file>file:/C:/Users/axel.bentodas/Documents/3.TroisiemeAnnee/JavaEE/Kebab-Master/KebabService_1.3/web/template.xhtml</file>
-            <file>file:/C:/Users/axel.bentodas/Documents/3.TroisiemeAnnee/JavaEE/Kebab-Master/KebabService_1.3/web/resources/resource-main.js</file>
             <file>file:/C:/Users/axel.bentodas/Documents/3.TroisiemeAnnee/JavaEE/Kebab-Master/KebabService_1.3/web/orders/List.xhtml</file>
-            <file>file:/C:/Users/axel.bentodas/Documents/3.TroisiemeAnnee/JavaEE/Kebab-Master/KebabService_1.3/web/WEB-INF/glassfish-resources.xml</file>
+            <file>file:/C:/Users/axel.bentodas/Documents/3.TroisiemeAnnee/JavaEE/Kebab-Master/KebabService_1.3/web/orders/Create.xhtml</file>
+            <file>file:/C:/Users/axel.bentodas/Documents/3.TroisiemeAnnee/JavaEE/Kebab-Master/KebabService_1.3/web/orders/Edit.xhtml</file>
+            <file>file:/C:/Users/axel.bentodas/Documents/3.TroisiemeAnnee/JavaEE/Kebab-Master/KebabService_1.3/src/java/com/kebab/master/controller/OrdersController.java</file>
         </group>
     </open-files>
 </project-private>

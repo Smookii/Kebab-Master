@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
@@ -49,10 +50,15 @@
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
                             <h:commandLink action="#{ordersController.prepareView}" value="#{bundle.ListOrdersViewLink}"/>
-                            <h:outputText value=" "/>
+                            <h:outputText value="       "/>
                             <h:commandLink action="#{ordersController.prepareEdit}" value="#{bundle.ListOrdersEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink action="#{ordersController.destroy}" value="#{bundle.ListOrdersDestroyLink}"/>
+                            <h:outputText value="       "/>                              
+                            <h:panelGroup rendered="#{item.state == 0}">
+                                    <h:commandButton action="#{ordersController.incOrder(item)}" value="To do !"/>
+                            </h:panelGroup>           
+                            <h:panelGroup rendered="#{item.state == 1}">
+                                    <h:commandButton action="#{ordersController.incOrder(item)}" value="Destroy"/>
+                            </h:panelGroup>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>

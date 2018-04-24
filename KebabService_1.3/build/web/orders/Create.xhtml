@@ -15,8 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateOrdersLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{ordersController.selected.id}" title="#{bundle.CreateOrdersTitle_id}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.CreateOrdersLabel_state}" for="state" />
                     <h:inputText id="state" value="#{ordersController.selected.state}" title="#{bundle.CreateOrdersTitle_state}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_state}"/>
                     <h:outputLabel value="#{bundle.CreateOrdersLabel_time}" for="time" />

@@ -19,6 +19,10 @@
                     <h:outputText value="#{ordersController.selected.id}" title="#{bundle.ViewOrdersTitle_id}"/>
                     <h:outputText value="#{bundle.ViewOrdersLabel_state}"/>
                     <h:outputText value="#{ordersController.selected.state}" title="#{bundle.ViewOrdersTitle_state}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_time}"/>
+                    <h:outputText value="#{ordersController.selected.time}" title="#{bundle.ViewOrdersTitle_time}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_menu}"/>
+                    <h:outputText value="#{ordersController.selected.menu}" title="#{bundle.ViewOrdersTitle_menu}"/>
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{ordersController.destroyAndView}" value="#{bundle.ViewOrdersDestroyLink}"/>

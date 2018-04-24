@@ -34,6 +34,18 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_time}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.time}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_menu}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.menu}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
                             <h:commandLink action="#{ordersController.prepareView}" value="#{bundle.ListOrdersViewLink}"/>

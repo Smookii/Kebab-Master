@@ -19,6 +19,10 @@
                     <h:inputText id="id" value="#{ordersController.selected.id}" title="#{bundle.CreateOrdersTitle_id}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.CreateOrdersLabel_state}" for="state" />
                     <h:inputText id="state" value="#{ordersController.selected.state}" title="#{bundle.CreateOrdersTitle_state}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_state}"/>
+                    <h:outputLabel value="#{bundle.CreateOrdersLabel_time}" for="time" />
+                    <h:inputText id="time" value="#{ordersController.selected.time}" title="#{bundle.CreateOrdersTitle_time}" />
+                    <h:outputLabel value="#{bundle.CreateOrdersLabel_menu}" for="menu" />
+                    <h:inputText id="menu" value="#{ordersController.selected.menu}" title="#{bundle.CreateOrdersTitle_menu}" />
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{ordersController.create}" value="#{bundle.CreateOrdersSaveLink}" />

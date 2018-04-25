@@ -46,6 +46,18 @@
             <role-name>root</role-name>
         </auth-constraint>
     </security-constraint>
+    <security-constraint>
+        <display-name>cookConstraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>cook</web-resource-name>
+            <description/>
+            <url-pattern>/faces/Cook/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>cook</role-name>
+        </auth-constraint>
+    </security-constraint>
     <login-config>
         <auth-method>FORM</auth-method>
         <realm-name>jdbcRealm</realm-name>
@@ -70,4 +82,8 @@
         <servlet-name>Home</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
+    <security-role>
+        <description/>
+        <role-name>cook</role-name>
+    </security-role>
 </web-app>

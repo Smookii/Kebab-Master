@@ -29,33 +29,78 @@ public class OrdersController implements Serializable {
     private com.kebab.master.controller.OrdersFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
-    private String[] kebabTypes = {"Durum", "Sandwich", "Boxe"};
-    private String[] kebabIngredient = {"Salade", "Sandwich", "Boxe"};
-    private String kebabType = "testetetetetetete";
+    
+    private String selectedType = "";
+    private String[] selectedIngredient = new String[3];
 
-    public String getKebabType() {
-        return kebabType;
+    public String[] getSelectedIngredient() {
+        return selectedIngredient;
     }
 
-    public void setKebabType(String kebabType) {
-        this.kebabType = kebabType;
+    public void setSelectedIngredient(String[] selectedIngredient) {
+        this.selectedIngredient = selectedIngredient;
     }
-    
+    private String[] selectedSauce = new String[3];
 
-    public String[] getKebabTypes() {
-        return kebabTypes;
+    public String getSelectedType() {
+        return selectedType;
+    }
+
+    public void setSelectedType(String selectedType) {
+        this.selectedType = selectedType;
+    }
+
+    public String[] getSelectedSauce() {
+        return selectedSauce;
+    }
+
+    public void setSelectedSauce(String[] selectedSauce) {
+        this.selectedSauce = selectedSauce;
+    }
+
+    public String[] getSelectedTypes() {
+        return selectedTypes;
+    }
+
+    public void setSelectedTypes(String[] selectedTypes) {
+        this.selectedTypes = selectedTypes;
     }
     
-    
-    public List<String> getKTypes()
+    private String[] selectedIngredients = {"Salade","Tomate","Oignon"};
+    private String[] selectedSauces = {"Blanche","Cocktail","Piquante"};
+    private String[] selectedTypes = {"Durum","Sandwich","Box"};
+
+
+    public String[] getSelectedIngredients() {
+        return selectedIngredients;
+    }
+
+    public void setSelectedIngredients(String[] selectedIngredients) {
+        this.selectedIngredients = selectedIngredients;
+    }
+
+    public String[] getSelectedSauces() {
+        return selectedSauces;
+    }
+
+    public void setSelectedSauces(String[] selectedSauces) {
+        this.selectedSauces = selectedSauces;
+    }
+
+     
+    public void CreateNewKebab()
     {
-        List<String> kTypes = new ArrayList();
-        kTypes.add("Durum");
-        kTypes.add("Sandwich");
-        kTypes.add("Box");
-        return kTypes;        
+        String strMenu = selectedType + " ";
+        for(String s : selectedIngredient)
+            strMenu += s + " ";
+        strMenu += " & ";
+        for(String s : selectedSauce)
+            strMenu += s + " ";
+        current.setMenu(strMenu);
+        create();
+        recreateModel();
     }
-
+     
     public OrdersController() {
     }
 

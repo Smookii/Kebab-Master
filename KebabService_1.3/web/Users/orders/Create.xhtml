@@ -17,15 +17,20 @@
                 <h:panelGrid columns="2">                    
                     <h:outputLabel value="#{bundle.CreateOrdersLabel_time}" for="time" />
                     <h:inputText id="time" value="#{ordersController.selected.time}" title="#{bundle.CreateOrdersTitle_time}" />
-                    <h:outputLabel value="#{bundle.CreateOrdersLabel_menu}" for="menu" />
-                    <h:inputText id="menu" value="#{ordersController.selected.menu}" title="#{bundle.CreateOrdersTitle_menu}" />
-                    <h:outputText value="#{bundle.kebabType}"/>
-                    <h:selectOneMenu>
-                        <f:selectItems value="#{ordersController.KTypes}" var="o" itemLabel="#{o}" itemValue="#{o}" /> 
+                    <h:selectOneMenu value="#{ordersController.selectedType}">
+                        <f:selectItems value="#{ordersController.selectedTypes}" var="o" itemLabel="#{o}" itemValue="#{o}" /> 
                     </h:selectOneMenu>
+                     <br />
+                     <h:selectManyCheckbox value="#{ordersController.selectedIngredient}">
+                        <f:selectItems value="#{ordersController.selectedIngredients}" var="o"  itemLabel="#{o}" itemValue="#{o}" /> 
+                    </h:selectManyCheckbox>
+                     <br />
+                     <h:selectManyCheckbox value="#{ordersController.selectedSauce}">
+                         <f:selectItems value="#{ordersController.selectedSauces}" var="o" itemLabel="#{o}" itemValue="#{o}" /> 
+                    </h:selectManyCheckbox>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{ordersController.create}" value="Commander" class="ui secondary button"/>
+                <h:commandLink action="#{ordersController.CreateNewKebab}" value="Commander" class="ui secondary button"/>
             </h:form>
         </ui:define>
     </ui:composition>

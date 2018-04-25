@@ -5,13 +5,31 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:composition template="/template.xhtml">
-        <h:head>
-            <title>Kebab-Service</title>
-            <h:outputStylesheet name="css/jsfcrud.css"/>
-        </h:head>
-        <h:body>
-            <br />
-        </h:body>
+        <ui:define name="title">
+            <h:outputText value="Qui sommes nous ?"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <em>
+                Je n'aime pas le sable. Il est grossier, agressif, irritant et s'insinue partout .. 
+            </em>
+            <h3>Une belle bande de vainqueurs</h3>
+            <p>
+                Nous ne travaillons pas, nous apprenons. 
+                Au fil des cafés corpos engloutis à un rythme indécent, 
+                l'idée d'un service de livraison de kebab 
+                nous est apparue soudainement : 
+                <em>C'était le pitch rêvé.</em><br/>
+                Fieffés schnapseurs, il était impensable pour nous de faire l'impasse sur un service qui n'intéresserait personne .. <br/>
+                Enfin, les gens nous haïraient. A tous coins de rues, nous serions la cible d'une multitude de sandwichs au thon furieusement envoyés dans notre direction.
+                <div class='ui divider'></div>
+                <h2>Kebab Master</h2>
+                <h4>Un service de livraison de kebab pour les plus fainéants d'entre vous, bande de blaireaux.</h4>
+                <div class="ui red message">Un service personnalisé.</div>
+                <div class="ui orange message">Un sens de l'éthique douteux.</div>
+                <div class="ui yellow message">Des délais souvent respectés.</div>
+                <div class="ui olive message">Un suisse sur par exemple 36 est satisfait de nos services. </div>
+            </p>
+        </ui:define>
     </ui:composition>
 </html>
 

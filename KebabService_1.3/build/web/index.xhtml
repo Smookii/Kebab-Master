@@ -4,39 +4,14 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-
-        <title>Facelet Title</title>
-        <h:outputStylesheet name="css/jsfcrud.css"/>
-    </h:head>
-    <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="/users/List" value="Show All Users Items"/>
-        <br />
-        <h:link outcome="/orders/List" value="Show All Orders Items"/>
-        <br />
-        <h:link outcome="/ingredient/List" value="Show All Ingredient Items"/>
-        <br />
-        <h:link outcome="/menu/List" value="Show All Menu Items"/>
-        <br />
-        <h:link outcome="/menuingredient/List" value="Show All Menuingredient Items"/>
-        <br />
-        <h:link outcome="/menusauce/List" value="Show All Menusauce Items"/>
-        <br />
-        <h:link outcome="/sauce/List" value="Show All Sauce Items"/>
-        <br />
-        <h:link outcome="/userorders/List" value="Show All Userorders Items"/>
-        <br />
-        <h:link outcome="/orders/List" value="Show All Orders Items"/>
-    </h:body>
-
-
-
-
-
-
-
-
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Kebab-Service"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <br />
+            <h:link outcome="/Admin/orders/List" value="Show All Orders Items"/>
+        </ui:define>
+    </ui:composition>
 </html>
 

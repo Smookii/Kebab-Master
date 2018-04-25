@@ -5,6 +5,8 @@ import com.kebab.master.controller.util.JsfUtil;
 import com.kebab.master.controller.util.PaginationHelper;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -27,6 +29,32 @@ public class OrdersController implements Serializable {
     private com.kebab.master.controller.OrdersFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
+    private String[] kebabTypes = {"Durum", "Sandwich", "Boxe"};
+    private String[] kebabIngredient = {"Salade", "Sandwich", "Boxe"};
+    private String kebabType = "testetetetetetete";
+
+    public String getKebabType() {
+        return kebabType;
+    }
+
+    public void setKebabType(String kebabType) {
+        this.kebabType = kebabType;
+    }
+    
+
+    public String[] getKebabTypes() {
+        return kebabTypes;
+    }
+    
+    
+    public List<String> getKTypes()
+    {
+        List<String> kTypes = new ArrayList();
+        kTypes.add("Durum");
+        kTypes.add("Sandwich");
+        kTypes.add("Box");
+        return kTypes;        
+    }
 
     public OrdersController() {
     }

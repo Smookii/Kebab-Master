@@ -6,11 +6,16 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="Kebab-Service"></h:outputText>
+            <h:outputText value="Login"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <br />
-            <h:link outcome="/Admin/orders/List" value="Show All Orders Items"/>
+            <h:outputText value="Kebab-Service"></h:outputText>
+            <form method="POST" action="j_security_check">                
+                Username: <input type="text" name="j_username" />   
+                Password: <input type="password" name="j_password" />  
+                <input type="submit" value="Login" />              
+                <input type="reset" value="Reset" />          
+            </form>    
         </ui:define>
     </ui:composition>
 </html>

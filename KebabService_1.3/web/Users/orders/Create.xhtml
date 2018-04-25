@@ -14,22 +14,18 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateOrdersLabel_state}" for="state" />
-                    <h:inputText id="state" value="#{ordersController.selected.state}" title="#{bundle.CreateOrdersTitle_state}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_state}"/>
+                <h:panelGrid columns="2">                    
                     <h:outputLabel value="#{bundle.CreateOrdersLabel_time}" for="time" />
                     <h:inputText id="time" value="#{ordersController.selected.time}" title="#{bundle.CreateOrdersTitle_time}" />
                     <h:outputLabel value="#{bundle.CreateOrdersLabel_menu}" for="menu" />
                     <h:inputText id="menu" value="#{ordersController.selected.menu}" title="#{bundle.CreateOrdersTitle_menu}" />
+                    <h:outputText value="#{bundle.kebabType}"/>
+                    <h:selectOneMenu>
+                        <f:selectItems value="#{ordersController.KTypes}" var="o" itemLabel="#{o}" itemValue="#{o}" /> 
+                    </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{ordersController.create}" value="#{bundle.CreateOrdersSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{ordersController.prepareList}" value="#{bundle.CreateOrdersShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateOrdersIndexLink}"/>
+                <h:commandLink action="#{ordersController.create}" value="Commander" class="ui secondary button"/>
             </h:form>
         </ui:define>
     </ui:composition>

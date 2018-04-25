@@ -5,13 +5,15 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:composition template="/template.xhtml">
-        <ui:define name="title">
-            <h:outputText value="Kebab-Service"></h:outputText>
-        </ui:define>
-        <ui:define name="body">
+        <h:head>
+            <title>Kebab-Service</title>
+            <h:outputStylesheet name="css/jsfcrud.css"/>
+        </h:head>
+        <h:body>
+            Order list
             <br />
             <h:link outcome="/Admin/orders/List" value="Show All Orders Items"/>
-        </ui:define>
+        </h:body>
     </ui:composition>
 </html>
 
